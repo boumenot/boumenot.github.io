@@ -7,26 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 21 Oct 2016 00:08:29 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 18 Nov 2016 20:46:39 -0800</lastBuildDate>
     <atom:link href="https://boumenot.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Brand New</title>
-      <link>https://boumenot.github.io/post/2016/new/</link>
-      <pubDate>Fri, 21 Oct 2016 00:08:29 -0700</pubDate>
+      <title>Convert PFX to PEM</title>
+      <link>https://boumenot.github.io/post/2016/pfx-to-pem-openssl/</link>
+      <pubDate>Fri, 18 Nov 2016 20:46:39 -0800</pubDate>
       
-      <guid>https://boumenot.github.io/post/2016/new/</guid>
-      <description>
+      <guid>https://boumenot.github.io/post/2016/pfx-to-pem-openssl/</guid>
+      <description>&lt;p&gt;Windows uses the PFX file format for certificates, and UNIX uses the PEM
+format.  If you have to use both platforms you frequently have to convert
+between the two worlds.  PEM is a good &lt;em&gt;base&lt;/em&gt; format choice.  Store in
+PEM, and then convert to PFX as necessary.&lt;/p&gt;
 
-&lt;h2 id=&#34;brand-spanking-new&#34;&gt;Brand Spanking New&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bat&#34;&gt;openssl pkcs12 -in cert.pfx -out cert.pem -nodes
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class MyClass(object):
-    def __init__(self) -&amp;gt; None:
-        pass
- 
-    @property
-    def is_alive(self) -&amp;gt; bool:
-        return True
+&lt;blockquote&gt;
+&lt;p&gt;The &lt;strong&gt;-nodes&lt;/strong&gt; does not encrypt the private key.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Self-Signed Certificate with PowerShell</title>
+      <link>https://boumenot.github.io/post/2016/self-signed-powershell/</link>
+      <pubDate>Fri, 18 Nov 2016 20:38:38 -0800</pubDate>
+      
+      <guid>https://boumenot.github.io/post/2016/self-signed-powershell/</guid>
+      <description>&lt;p&gt;How many ways are there to create a self-signed certificate?&lt;/p&gt;
+
+&lt;p&gt;One: PowerShell&lt;/p&gt;
+
+&lt;p&gt;Open a PowerShell prompt as root, and execute.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ps&#34;&gt;$cert = New-SelfSignedCertificate -DnsName yourdomain.cloudapp.net
+$pass = ConvertTo-SecureString -String &amp;quot;secret&amp;quot; -Force -AsPlainText
+Export-PfxCertificate -Cert $cert -FilePath .\cert.pfx -Password $pass
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

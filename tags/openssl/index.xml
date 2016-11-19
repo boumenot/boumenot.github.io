@@ -2,13 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ugly Stool</title>
-    <link>https://boumenot.github.io/index.xml</link>
+    <link>https://boumenot.github.io/tags/openssl/index.xml</link>
     <description>Recent content on Ugly Stool</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 18 Nov 2016 20:46:39 -0800</lastBuildDate>
-    <atom:link href="https://boumenot.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://boumenot.github.io/tags/openssl/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Convert PFX to PEM</title>
@@ -27,25 +26,6 @@ PEM, and then convert to PFX as necessary.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The &lt;strong&gt;-nodes&lt;/strong&gt; does not encrypt the private key.&lt;/p&gt;
 &lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Self-Signed Certificate with PowerShell</title>
-      <link>https://boumenot.github.io/post/2016/self-signed-powershell/</link>
-      <pubDate>Fri, 18 Nov 2016 20:38:38 -0800</pubDate>
-      
-      <guid>https://boumenot.github.io/post/2016/self-signed-powershell/</guid>
-      <description>&lt;p&gt;How many ways are there to create a self-signed certificate?&lt;/p&gt;
-
-&lt;p&gt;One: PowerShell&lt;/p&gt;
-
-&lt;p&gt;Open a PowerShell prompt as root, and execute.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ps&#34;&gt;$cert = New-SelfSignedCertificate -DnsName yourdomain.cloudapp.net
-$pass = ConvertTo-SecureString -String &amp;quot;secret&amp;quot; -Force -AsPlainText
-Export-PfxCertificate -Cert $cert -FilePath .\cert.pfx -Password $pass
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

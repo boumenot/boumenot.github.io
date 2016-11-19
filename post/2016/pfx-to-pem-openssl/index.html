@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Studies show that prolonged exposure may cause...">
+  <meta name="description" content="Convert a PFX (PKCS12) Certificate to the PEM format">
   <meta name="generator" content="Hugo 0.17" />
 
-  <title>Posts &middot; Ugly Stool</title>
+  <title>Convert PFX to PEM &middot; Ugly Stool</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Ugly Stool" href="https://boumenot.github.io/post/index.xml" />
   
 
   
@@ -97,10 +95,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://boumenot.github.io/post/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -194,21 +188,80 @@
 
 
 <div class="header">
-  <h1>Posts</h1>
+  <h1>Convert PFX to PEM</h1>
+  <h2>Convert a PFX (PKCS12) Certificate to the PEM format</h2>
 </div>
 <div class="content">
-  
-  <h2>2016</h2>
-  <ul>
-  
-    <li><time>18 Nov 2016, 20:46</time> - <a href="https://boumenot.github.io/post/2016/pfx-to-pem-openssl/">Convert PFX to PEM</a></li>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>18 Nov 2016, 20:46</time>
+  </div>
 
   
-    <li><time>18 Nov 2016, 20:38</time> - <a href="https://boumenot.github.io/post/2016/self-signed-powershell/">Self-Signed Certificate with PowerShell</a></li>
 
   
-  </ul>
+
   
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://boumenot.github.io/tags/x509">x509</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://boumenot.github.io/tags/openssl">openssl</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Windows uses the PFX file format for certificates, and UNIX uses the PEM
+format.  If you have to use both platforms you frequently have to convert
+between the two worlds.  PEM is a good <em>base</em> format choice.  Store in
+PEM, and then convert to PFX as necessary.</p>
+
+<pre><code class="language-bat">openssl pkcs12 -in cert.pfx -out cert.pem -nodes
+</code></pre>
+
+<blockquote>
+<p>The <strong>-nodes</strong> does not encrypt the private key.</p>
+</blockquote>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://boumenot.github.io/post/2016/self-signed-powershell/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://boumenot.github.io/post/2016/self-signed-powershell/">Self-Signed Certificate with PowerShell</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
 </div>
 
 </div>

@@ -41,8 +41,10 @@
   
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/googlecode.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+  
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.8.0/styles/googlecode.min.css">
+  <script src="//cdn.jsdelivr.net/highlight.js/9.8.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   
 
@@ -200,24 +202,30 @@
   
     <article>
   <header>
-    <h2><a href="https://boumenot.github.io/post/2016/new/">Brand New</a></h2>
+    <h2><a href="https://boumenot.github.io/post/2016/pfx-to-pem-openssl/">Convert PFX to PEM</a></h2>
 
     <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>21 Oct 2016, 00:08</time>
+    <time>18 Nov 2016, 20:46</time>
   </div>
 
   
 
   
-  
-  
-  
 
   
   
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://boumenot.github.io/tags/x509">x509</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://boumenot.github.io/tags/openssl">openssl</a>
+    
+  </div>
   
   
 
@@ -226,7 +234,53 @@
   </header>
 
   <p>
-   Brand Spanking New class MyClass(object): def __init__(self) -&gt; None: pass @property def is_alive(self) -&gt; bool: return True  
+  Windows uses the PFX file format for certificates, and UNIX uses the PEM format. If you have to use both platforms you frequently have to convert between the two worlds. PEM is a good base format choice. Store in PEM, and then convert to PFX as necessary.
+openssl pkcs12 -in cert.pfx -out cert.pem -nodes   The -nodes does not encrypt the private key.
+ 
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://boumenot.github.io/post/2016/self-signed-powershell/">Self-Signed Certificate with PowerShell</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>18 Nov 2016, 20:38</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://boumenot.github.io/tags/x509">x509</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://boumenot.github.io/tags/powershell">powershell</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  How many ways are there to create a self-signed certificate?
+One: PowerShell
+Open a PowerShell prompt as root, and execute.
+$cert = New-SelfSignedCertificate -DnsName yourdomain.cloudapp.net $pass = ConvertTo-SecureString -String &quot;secret&quot; -Force -AsPlainText Export-PfxCertificate -Cert $cert -FilePath .\cert.pfx -Password $pass  
   </p>
 
   

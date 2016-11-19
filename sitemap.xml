@@ -3,12 +3,17 @@
   
   <url>
     <loc>https://boumenot.github.io/</loc>
-    <lastmod>2016-10-21T00:08:29-07:00</lastmod>
+    <lastmod>2016-11-18T20:46:39-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://boumenot.github.io/post/2016/new/</loc>
-    <lastmod>2016-10-21T00:08:29-07:00</lastmod>
+    <loc>https://boumenot.github.io/post/2016/pfx-to-pem-openssl/</loc>
+    <lastmod>2016-11-18T20:46:39-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://boumenot.github.io/post/2016/self-signed-powershell/</loc>
+    <lastmod>2016-11-18T20:38:38-08:00</lastmod>
   </url>
   
 </urlset>
